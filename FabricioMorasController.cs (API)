@@ -1,0 +1,118 @@
+using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Data.Entity;
+using System.Data.Entity.Infrastructure;
+using System.Linq;
+using System.Net;
+using System.Net.Http;
+using System.Web.Http;
+using System.Web.Http.Description;
+using FmVideojuegos.Models;
+
+namespace FmVideojuegos.Controllers
+{
+    public class VideojuegosController : ApiController
+    {
+        private ModeloFabricioMora db = new ModeloFabricioMora();
+
+        // GET: api/Videojuegos
+        public IQueryable<FabricioMora> GetVideojuegos()
+        {
+            return db.Videojuegos;
+        }
+
+        // GET: api/Videojuegos/5
+        [ResponseType(typeof(FabricioMora))]
+        public IHttpActionResult GetVideojuegos(int id)
+        {
+            FabricioMora videojuegos = db.Videojuegos.Find(id);
+            if (videojuegos == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(videojuegos);
+        }
+
+        // PUT: api/Videojuegos/5
+        [ResponseType(typeof(void))]
+        public IHttpActionResult PutVideojuegos(int id, FabricioMora videojuegos)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            if (id != videojuegos.Codigo)
+            {
+                return BadRequest();
+            }
+
+            db.Entry(videojuegos).State = EntityState.Modified;
+
+            try
+            {
+                db.SaveChanges();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!VideojuegosExists(id))
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            return StatusCode(HttpStatusCode.NoContent);
+        }
+
+        // POST: api/Videojuegos
+        [ResponseType(typeof(FabricioMora))]
+        public IHttpActionResult PostVideojuegos(FabricioMora videojuegos)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            db.Videojuegos.Add(videojuegos);
+            db.SaveChanges();
+
+            return CreatedAtRoute("DefaultApi", new { id = videojuegos.Codigo }, videojuegos);
+        }
+
+        // DELETE: api/Videojuegos/5
+        [ResponseType(typeof(FabricioMora))]
+        public IHttpActionResult DeleteVideojuegos(int id)
+        {
+            FabricioMora videojuegos = db.Videojuegos.Find(id);
+            if (videojuegos == null)
+            {
+                return NotFound();
+            }
+
+            db.Videojuegos.Remove(videojuegos);
+            db.SaveChanges();
+
+            return Ok(videojuegos);
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                db.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        private bool VideojuegosExists(int id)
+        {
+            return db.Videojuegos.Count(e => e.Codigo == id) > 0;
+        }
+    }
+}

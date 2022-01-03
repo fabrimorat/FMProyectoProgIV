@@ -1,0 +1,32 @@
+using System;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Data.Entity;
+using System.Linq;
+
+namespace FmVideojuegos.Models
+{
+    public partial class ModeloFabricioMora : DbContext
+    {
+        public ModeloFabricioMora()
+            : base("name=ModeloVideojuegos")
+        {
+        }
+
+        public virtual DbSet<FabricioMora> Videojuegos { get; set; }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<FabricioMora>()
+                .Property(e => e.NombreModelo)
+                .IsFixedLength();
+
+            modelBuilder.Entity<FabricioMora>()
+                .Property(e => e.Autonomia)
+                .IsFixedLength();
+
+            modelBuilder.Entity<FabricioMora>()
+                .Property(e => e.Velocidad)
+                .IsFixedLength();
+        }
+    }
+}

@@ -1,0 +1,47 @@
+<Page
+    x:Class="ProyectoProgIVUWP.BlankPage1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ProyectoProgIVUWP"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="BlanchedAlmond">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="*"/>
+
+        </Grid.ColumnDefinitions>
+
+        <Button Content="Mostrar Modelos" Click="Button_Click"/>
+        <ListView x:Name="ListaDemo" Grid.Column="1">
+            <ListView.HeaderTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="ID" Width="50"/>
+                        <TextBlock Text="Nombre de Juego" Width="250"/>
+                        <TextBlock Text="Nombre Plataforma" Width="250"/>
+                        <TextBlock Text="Fecha de Nacimiento" Width="250"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.HeaderTemplate>
+            <ListView.ItemTemplate>
+                <DataTemplate x:DataType="local:FabricioMora">
+                    <StackPanel>
+                        <TextBlock x:Name="ItemId" Text="{x:Bind Codigo}"/>
+                        <TextBlock x:Name="ItemNameJuego" Text="{x:Bind NombreModelo}"/>
+                        <TextBlock x:Name="ItemPlataforma" Text="{x:Bind Autonomia}"/>
+                        <TextBlock x:Name="ItemFecha" Text="{x:Bind FechaFabricacion}"/>
+                        <TextBlock x:Name="ItemTipo" Text="{x:Bind Velocidad}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+</Page>

@@ -1,0 +1,28 @@
+USE [CancionesDF]
+GO
+/****** Object:  Table [dbo].[FabricioMora]    Script Date: 2/1/2022 21:52:58 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Videojuegos](
+	[Codigo] [int] IDENTITY(1,1) NOT NULL,
+	[NombreModelo] [nchar](250) NOT NULL,
+	[Autonomia] [nchar](200) NULL,
+	[FechaFabricacion] [date] NOT NULL,
+	[Velocidad] [nchar](200) NULL,
+ CONSTRAINT [PK_Videojuegos] PRIMARY KEY CLUSTERED 
+(
+	[Codigo] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+SET IDENTITY_INSERT [dbo].[Videojuegos] ON 
+
+INSERT [dbo].[FabricioMora] ([Codigo], [NombreModelo], [Autonomia], [FechaFabricacion], [Velocidad]) VALUES (1, N'DPX                                                                                                                                                                                            ', N'60-70 km                                                                                                                ', CAST(N'2021-10-22' AS Date), N'90-95 km/h ')
+INSERT [dbo].[FabricioMora] ([Codigo], [NombreModelo], [Autonomia], [FechaFabricacion], [Velocidad]) VALUES (2, N'M7                                                                                                                                                                                           ', N'50-60 km                                                                                                                ', CAST(N'2021-10-22' AS Date), N'60-70 km/h ')
+INSERT [dbo].[FabricioMora] ([Codigo], [NombreModelo], [Autonomia], [FechaFabricacion], [Velocidad]) VALUES (3, N'GOGO                                                                                                                                                                                                   ', N'40-45 km                                                                                                                       ', CAST(N'2021-10-22' AS Date), N'40-50 km/h ')
+INSERT [dbo].[FabricioMora] ([Codigo], [NombreModelo], [Autonomia], [FechaFabricacion], [Velocidad]) VALUES (4, N'GOGO-2                                                                                                                                                                                           ', N'90-100 km                                                                                                                        ', CAST(N'2021-10-22' AS Date), N'50-60 km/h ')
+INSERT [dbo].[FabricioMora] ([Codigo], [NombreModelo], [Autonomia], [FechaFabricacion], [Velocidad]) VALUES (5, N'HAWK                                                                                                                                                                                                ', N'30-35 km                                                                                                                         ', CAST(N'2021-10-22' AS Date), N'35-40 km/h ')
+SET IDENTITY_INSERT [dbo].[Videojuegos] OFF
+GO

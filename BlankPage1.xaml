@@ -24,21 +24,22 @@
             <ListView.HeaderTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="ID" Width="50"/>
-                        <TextBlock Text="Nombre de Juego" Width="250"/>
-                        <TextBlock Text="Nombre Plataforma" Width="250"/>
-                        <TextBlock Text="Fecha de Nacimiento" Width="250"/>
+                        <TextBlock Text="Codigo" Width="50"/>
+                        <TextBlock Text="Nombre de Modelo" Width="250"/>
+                        <TextBlock Text="Autonomia" Width="250"/>
+                        <TextBlock Text="Fecha de Fabricacion" Width="250"/>
+                        <TextBlock Text="Velocidad" Width="250"/>
                     </StackPanel>
                 </DataTemplate>
             </ListView.HeaderTemplate>
             <ListView.ItemTemplate>
                 <DataTemplate x:DataType="local:FabricioMora">
                     <StackPanel>
-                        <TextBlock x:Name="ItemId" Text="{x:Bind Codigo}"/>
-                        <TextBlock x:Name="ItemNameJuego" Text="{x:Bind NombreModelo}"/>
-                        <TextBlock x:Name="ItemPlataforma" Text="{x:Bind Autonomia}"/>
-                        <TextBlock x:Name="ItemFecha" Text="{x:Bind FechaFabricacion}"/>
-                        <TextBlock x:Name="ItemTipo" Text="{x:Bind Velocidad}"/>
+                        <TextBlock x:Name="Codigo" Text="{x:Bind Codigo}"/>
+                        <TextBlock x:Name="NombreModelo" Text="{x:Bind NombreModelo}"/>
+                        <TextBlock x:Name="Autonomia" Text="{x:Bind Autonomia}"/>
+                        <TextBlock x:Name="FechaFabricacion" Text="{x:Bind FechaFabricacion}"/>
+                        <TextBlock x:Name="Velocidad" Text="{x:Bind Velocidad}"/>
                     </StackPanel>
                 </DataTemplate>
             </ListView.ItemTemplate>

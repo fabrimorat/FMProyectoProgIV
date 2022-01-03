@@ -1,0 +1,32 @@
+<Page
+    x:Class="ProyectoProgIVUWP.BlankPage3"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ProyectoProgIVUWP"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <StackPanel HorizontalAlignment="Left" Height="668" VerticalAlignment="Top" Width="1490">
+            <TextBlock Text="Politicas de CALIDAD" TextWrapping="Wrap" FontSize="36" FontFamily="Arial Rounded MT Bold" FontWeight="Bold" FontStyle="Italic" HorizontalAlignment="Center"/>
+            <TextBlock Text="En MACEV, importamos y comercializamos productos eléctricos de alta calidad para una segura, confiable y rápida movilización, satisfaciendo todas las necesidades y expectativas de nuestros clientes, socios y comunidad mediante el mejoramiento y modernos modelos en toda la rama de monopatines eléctricos, scooters eléctricos, motos eléctricas, tricimotos eléctricos y vehículos eléctricos; a través de continuos procesos de Crédito y Cartera; Compras, Logística y Comercialización en puntos de Venta; desarrollamos nuestra gestión con excelencia en servicio, contando con la activa participación y apoyo de nuestro talento humano y amplia experiencia por más de 15 años en el área de Comercio Exterior." TextWrapping="Wrap" FontSize="24" FontFamily="Arial Rounded MT Bold" FontStyle="Italic" HorizontalAlignment="Center"/>
+
+
+            <TextBlock Text="Politicas de GESTION ADMINISTRATIVA" TextWrapping="Wrap" FontSize="36" FontFamily="Arial Rounded MT Bold" FontWeight="Bold" FontStyle="Italic" HorizontalAlignment="Center"/>
+            <TextBlock Text="Todos los empleados de MAC INTERNATIONAL MACEV S.A.S., asumirán las orientaciones y procedimientos que se establezcan en la Administración Central, basados en la orientación que suministre la Gerencia General, encaminados a vivir y practicar en la Empresa un estilo participativo, con base en trabajo en equipo y en un proceso de mejoramiento continuo.
+
+En cumplimiento de estas políticas: desarrollamos políticas de Administración de procesos en todas las áreas de la Organización y la evaluación de sus resultados, procesos de personal, de selección, de inducción, de motivación y de capacitación para todo el grupo de colaboradores." TextWrapping="Wrap" HorizontalAlignment="Center" FontSize="24" FontFamily="Arial Rounded MT Bold" FontStyle="Italic"/>
+
+
+            <TextBlock Text="Politicas de Seguridad Vial" TextWrapping="Wrap" HorizontalAlignment="Center" FontSize="36" FontFamily="Arial Rounded MT Bold" FontWeight="Bold" FontStyle="Italic"/>
+            <TextBlock Text="Es compromiso de DISTRIBUIDORA RAYCO S.A.S, establecer actividades de promoción y prevención de accidentes en vía pública, por ello todos los trabajadores, contratistas y temporales, son responsables en la participación de las actividades que desarrolle la empresa con el fin de disminuir la probabilidad de ocurrencia de accidentes que puedan afectar la integridad física, mental y social de los trabajadores, contratistas y temporales.
+
+Para cumplir este propósito MAC INTERNATIONAL MACEV S.A.S., se basa en los siguientes parámetros:
+Cumplir con la reglamentación establecida en el Código Nacional de Tránsito Terrestre según ley 769 de 2002 y la ley 1383 de 2010, que se enmarca en principios de seguridad, calidad, la preservación de un ambiente sano y la protección del espacio público." TextWrapping="Wrap" FontSize="24" FontFamily="Arial Rounded MT Bold" FontStyle="Italic" HorizontalAlignment="Center"/>
+        </StackPanel>
+
+
+    </Grid>
+</Page>
